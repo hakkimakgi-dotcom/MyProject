@@ -1,0 +1,33 @@
+name: .NET Windows Build
+
+on:
+  push:
+    branches:
+      - main
+      - ci/add-github-actions
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '7.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore ./CharacterCountWinForms/CharacterCountWinForms.csproj
+
+      - name: Build
+        run: dotnet build ./CharacterCountWinForms/CharacterCountWinForms.csproj --configuration Release --no-restore
+
+      - name: Run tests (if any)
+        run: |
+          echo "No tests configured." || true
