@@ -1,4 +1,7 @@
+```markdown
 # CharacterCountWinForms
+
+[![.NET Build](https://github.com/hakkimakgi-dotcom/MyProject/actions/workflows/dotnet.yml/badge.svg)](https://github.com/hakkimakgi-dotcom/MyProject/actions)
 
 Small Windows Forms application that shows the number of characters in the input text (including or excluding spaces).
 
@@ -31,3 +34,4 @@ Small Windows Forms application that shows the number of characters in the input
 ## Notes
 
 - The app updates character counts in real time and has a checkbox to ignore spaces.
+```
